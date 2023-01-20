@@ -1,35 +1,47 @@
 import React, { Component } from 'react';
 import './Calculator.css';
+import calculate from '../logic/calculate';
 
 class Calculator extends Component {
   constructor(props) {
     super(props);
-    this.state = null;
+    this.state = { total: 0, next: null, operation: null };
   }
 
+  onKeyPress = (e) => {
+    const keyValue = e.target.innerText;
+    const result = calculate(this.state, keyValue);
+    this.setState(result);
+  };
+
   render() {
+    const { total, operation, next } = this.state;
     return (
       <section className="container">
-        <div className="result" />
-        <button type="button" className="ac"> AC </button>
-        <button type="button" className="pm"> +/- </button>
-        <button type="button" className="modulo"> % </button>
-        <button type="button" className="divide ver"> &#247; </button>
-        <button type="button" className="seven"> 7 </button>
-        <button type="button" className="eight"> 8 </button>
-        <button type="button" className="nine"> 9 </button>
-        <button type="button" className="multiple ver"> x </button>
-        <button type="button" className="four"> 4 </button>
-        <button type="button" className="five"> 5 </button>
-        <button type="button" className="six"> 6 </button>
-        <button type="button" className="minus ver"> - </button>
-        <button type="button" className="one"> 1 </button>
-        <button type="button" className="two"> 2 </button>
-        <button type="button" className="three"> 3 </button>
-        <button type="button" className="plus ver"> + </button>
-        <button type="button" className="zero"> 0 </button>
-        <button type="button" className="dot"> . </button>
-        <button type="button" className="equal ver"> = </button>
+        <div className="result">
+          {total}
+          {operation}
+          {next}
+        </div>
+        <button type="button" onClick={this.onKeyPress}> AC </button>
+        <button type="button" onClick={this.onKeyPress}> +/- </button>
+        <button type="button" onClick={this.onKeyPress}> % </button>
+        <button type="button" className="ver" onClick={this.onKeyPress}> &#247; </button>
+        <button type="button" onClick={this.onKeyPress}> 7 </button>
+        <button type="button" onClick={this.onKeyPress}> 8 </button>
+        <button type="button" onClick={this.onKeyPress}> 9 </button>
+        <button type="button" className="ver" onClick={this.onKeyPress}> x </button>
+        <button type="button" onClick={this.onKeyPress}> 4 </button>
+        <button type="button" onClick={this.onKeyPress}> 5 </button>
+        <button type="button" onClick={this.onKeyPress}> 6 </button>
+        <button type="button" className="ver" onClick={this.onKeyPress}> - </button>
+        <button type="button" onClick={this.onKeyPress}> 1 </button>
+        <button type="button" onClick={this.onKeyPress}> 2 </button>
+        <button type="button" onClick={this.onKeyPress}> 3 </button>
+        <button type="button" className="ver" onClick={this.onKeyPress}> + </button>
+        <button type="button" className="zero" onClick={this.onKeyPress}> 0 </button>
+        <button type="button" onClick={this.onKeyPress}> . </button>
+        <button type="button" className="ver" onClick={this.onKeyPress}> = </button>
       </section>
     );
   }
