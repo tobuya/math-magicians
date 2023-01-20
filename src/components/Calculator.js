@@ -1,50 +1,46 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './Calculator.css';
 import calculate from '../logic/calculate';
 
-class Calculator extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { total: 0, next: null, operation: null };
-  }
+const Calculator = () => {
+  const [state, setState] = useState({ total: 0, next: null, operation: null });
 
-  onKeyPress = (e) => {
+  const onKeyPress = (e) => {
     const keyValue = e.target.innerText;
-    const result = calculate(this.state, keyValue);
-    this.setState(result);
+    const result = calculate(state, keyValue);
+    setState(result);
   };
 
-  render() {
-    const { total, operation, next } = this.state;
-    return (
-      <section className="container">
-        <div className="result">
-          {total}
-          {operation}
-          {next}
-        </div>
-        <button type="button" onClick={this.onKeyPress}> AC </button>
-        <button type="button" onClick={this.onKeyPress}> +/- </button>
-        <button type="button" onClick={this.onKeyPress}> % </button>
-        <button type="button" className="ver" onClick={this.onKeyPress}> &#247; </button>
-        <button type="button" onClick={this.onKeyPress}> 7 </button>
-        <button type="button" onClick={this.onKeyPress}> 8 </button>
-        <button type="button" onClick={this.onKeyPress}> 9 </button>
-        <button type="button" className="ver" onClick={this.onKeyPress}> x </button>
-        <button type="button" onClick={this.onKeyPress}> 4 </button>
-        <button type="button" onClick={this.onKeyPress}> 5 </button>
-        <button type="button" onClick={this.onKeyPress}> 6 </button>
-        <button type="button" className="ver" onClick={this.onKeyPress}> - </button>
-        <button type="button" onClick={this.onKeyPress}> 1 </button>
-        <button type="button" onClick={this.onKeyPress}> 2 </button>
-        <button type="button" onClick={this.onKeyPress}> 3 </button>
-        <button type="button" className="ver" onClick={this.onKeyPress}> + </button>
-        <button type="button" className="zero" onClick={this.onKeyPress}> 0 </button>
-        <button type="button" onClick={this.onKeyPress}> . </button>
-        <button type="button" className="ver" onClick={this.onKeyPress}> = </button>
-      </section>
-    );
-  }
-}
+  const { total, next, operation } = state;
+
+  return (
+    <section className="container">
+      <div className="result">
+        {total}
+        {operation}
+        {next}
+      </div>
+      <button type="button" onClick={onKeyPress}> AC </button>
+      <button type="button" onClick={onKeyPress}> +/- </button>
+      <button type="button" onClick={onKeyPress}> % </button>
+      <button type="button" className="ver" onClick={onKeyPress}> &#247; </button>
+      <button type="button" onClick={onKeyPress}> 7 </button>
+      <button type="button" onClick={onKeyPress}> 8 </button>
+      <button type="button" onClick={onKeyPress}> 9 </button>
+      <button type="button" className="ver" onClick={onKeyPress}> x </button>
+      <button type="button" onClick={onKeyPress}> 4 </button>
+      <button type="button" onClick={onKeyPress}> 5 </button>
+      <button type="button" onClick={onKeyPress}> 6 </button>
+      <button type="button" className="ver" onClick={onKeyPress}> - </button>
+      <button type="button" onClick={onKeyPress}> 1 </button>
+      <button type="button" onClick={onKeyPress}> 2 </button>
+      <button type="button" onClick={onKeyPress}> 3 </button>
+      <button type="button" className="ver" onClick={onKeyPress}> + </button>
+      <button type="button" className="zero" onClick={onKeyPress}> 0 </button>
+      <button type="button" onClick={onKeyPress}> . </button>
+      <button type="button" className="ver" onClick={onKeyPress}> = </button>
+    </section>
+  );
+};
 
 export default Calculator;
