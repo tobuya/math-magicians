@@ -64,6 +64,7 @@
 
 - **Quote section**
 - **Home section**
+- **Add a live demo link**
 
 <!-- LIVE DEMO -->
 
@@ -160,7 +161,7 @@ If you like this project give me a star.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-We would like to thank Microverse and our fellow micronauts.
+I would like to thank Microverse and my fellow Micronauts.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
