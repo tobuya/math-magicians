@@ -1,0 +1,44 @@
+.section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  height: 60vh;
+  padding: 3%;
+}
+
+.h4 {
+  margin-top: 0;
+  margin-left: 4%;
+  font-size: xx-large;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  border: 1px solid #fff;
+  margin-right: 4%;
+}
+
+.result {
+  grid-area: 1 / 1 / 2 / 5;
+  background-color: gray;
+  color: #fff;
+  text-align: right;
+  padding: 5px;
+  font-size: 25px;
+}
+
+button {
+  border: 1px solid rgb(199, 199, 199);
+  cursor: pointer;
+  background-color: rgb(224, 224, 224);
+}
+
+.zero {
+  grid-area: 6 / 1 / 7 / 3;
+}
+
+.ver {
+  background-color: rgb(245, 145, 62);
+}
