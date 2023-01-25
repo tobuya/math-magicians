@@ -1,11 +1,23 @@
+.section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  height: 60vh;
+  padding: 3%;
+}
+
+.h4 {
+  margin-top: 0;
+  margin-left: 4%;
+  font-size: xx-large;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
   border: 1px solid #fff;
-  margin: 3% 5%;
-  place-self: center;
-  height: 60vh;
+  margin-right: 4%;
 }
 
 .result {

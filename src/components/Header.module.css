@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3% 2%;
+}
+
+.h1 {
+  font-size: xx-large;
+}
+
+.navigation {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+}
