@@ -1,4 +1,4 @@
-import calculate from './calculate';
+import calculate from '../calculate';
 
 const obj = { total: null, next: null, operation: null };
 
@@ -7,8 +7,8 @@ describe('Test Calculator functioning', () => {
     expect(calculate(obj, 'AC')).toEqual(obj);
   });
 
-  it('When zero button is clicked and next value is zero, return an empty object', () => {
-    expect(calculate(obj, '0')).toEqual({});
+  it('When zero button is clicked and next value is zero, return an object with null or zero values.', () => {
+    expect(calculate(obj, '0')).toEqual({ next: '0', total: null });
   });
 
   it('When there is an operation, update next', () => {
@@ -17,7 +17,7 @@ describe('Test Calculator functioning', () => {
   });
 
   it('When there is no operation, update next and clear the value', () => {
-    expect(...obj, '5').toEqual({ next: '5', total: null });
+    expect(calculate(obj, '5')).toEqual({ next: '5', total: null });
   });
 
   it('When the button clicked is a dot', () => {
@@ -31,7 +31,7 @@ describe('Test Calculator functioning', () => {
     const returnObj = {
       ...operationObj, next: null, total: '5', operation: null,
     };
-    expect(operationObj, '=').toEqual(returnObj);
+    expect(calculate(operationObj, '=')).toEqual(returnObj);
   });
 
   it('Do nothing when next value or the operation is missing', () => {
@@ -43,6 +43,6 @@ describe('Test Calculator functioning', () => {
 
   it("When a user press an operation after pressing '='", () => {
     const operationObj = { ...obj, total: '25' };
-    expect(calculate(operationObj, '-')).toEqual({ ...obj, operation: '-' });
+    expect(calculate(operationObj, '-')).toEqual({ ...obj, operation: '-', total: '25' });
   });
 });
