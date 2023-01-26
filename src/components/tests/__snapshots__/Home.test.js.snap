@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home Page test Wether Home page renders 1`] = `
+exports[`Home Page test Whether Home page renders 1`] = `
 <div
   className="home"
 >
