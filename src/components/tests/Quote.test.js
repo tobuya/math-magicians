@@ -1,13 +1,13 @@
 import TestRenderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
-import Home from '../Home';
+import Quote from '../Quote';
 
-describe('Home Page test', () => {
-  it('Whether Home page renders', () => {
+describe('Quote Page test', () => {
+  it('Whether Quote page renders', () => {
     const tree = TestRenderer
       .create(
         <BrowserRouter>
-          <Home />
+          <Quote />
         </BrowserRouter>,
       )
       .toJSON();
