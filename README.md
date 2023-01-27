@@ -62,15 +62,15 @@
 
 #### 🔭 Future Features <a name="future-features"></a>
 
-- **Quote section**
-- **Home section**
-- **Add a live demo link**
+- **Update Home section Information**
+- **Display random mathematics quotes on Quote Section**
+- **Add animations and transitions**
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- <a href="#" target="_blank">Live Demo Link</a>
+- <a href="https://math-magicians-x9g8.onrender.com" target="_blank">Live Demo Link</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
