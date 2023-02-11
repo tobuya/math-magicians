@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import style from './Header.module.css';
 
 const Header = () => (
@@ -7,15 +7,15 @@ const Header = () => (
     <nav>
       <ul className={style.navigation}>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Home</NavLink>
         </li>
         |
         <li>
-          <Link to="/calculator">Calculator</Link>
+          <NavLink to="/calculator" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Calculator</NavLink>
         </li>
         |
         <li>
-          <Link to="/quote">Quote</Link>
+          <NavLink to="/quote" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Quote</NavLink>
         </li>
       </ul>
     </nav>
