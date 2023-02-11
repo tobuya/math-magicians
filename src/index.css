@@ -25,3 +25,11 @@ code {
     'Courier New',
     monospace;
 }
+
+.inactive {
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+}
